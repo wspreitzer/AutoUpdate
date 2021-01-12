@@ -1,11 +1,13 @@
 package com.williamspreitzer.autoupdate.domain;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
+
+import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "url", "html_url", "assets_url", "upload_url", "tarball_url", "zipball_url", "id", "node_id",
@@ -14,39 +16,65 @@ public class Release extends APIResponse{
 
 	@JsonProperty("url")
 	private String url;
+	
 	@JsonProperty("html_url")
+	@SerializedName("html_url")
 	private String htmlUrl;
+	
 	@JsonProperty("assets_url")
+	@SerializedName("assets_url")
 	private String assetsUrl;
+	
 	@JsonProperty("upload_url")
+	@SerializedName("upload_url")
 	private String uploadUrl;
+	
 	@JsonProperty("tarball_url")
+	@SerializedName("tarball_url")
 	private String tarballUrl;
+	
 	@JsonProperty("zipball_url")
+	@SerializedName("zipball_url")
 	private String zipballUrl;
+	
 	@JsonProperty("id")
 	private String id;
+	
 	@JsonProperty("node_id")
+	@SerializedName("node_id")
 	private String nodeId;
+	
 	@JsonProperty("tag_name")
+	@SerializedName("tag_name")
 	private String tagName;
+	
 	@JsonProperty("target_commitish")
+	@SerializedName("target_commitish")
 	private String targetCommitish;
+	
 	@JsonProperty("name")
-	private int name;
+	private String name;
+	
 	@JsonProperty("body")
 	private String body;
+	
 	@JsonProperty("draft")
 	private String draft;
+	
 	@JsonProperty("prerelease")
 	private boolean prerelease;
+	
 	@JsonProperty("created_at")
+	@SerializedName("created_at")
 	private Object createdAt;
+	
 	@JsonProperty("publish_at")
+	@SerializedName("publish_at")
 	private Object publishAt;
+	
 	@JsonProperty("author")
 	private Author author;
-
+	
 	/**
 	 * No args constructor for use in serialization
 	 *
@@ -75,7 +103,7 @@ public class Release extends APIResponse{
 	 * @param assetsUrl
 	 */
 	public Release(String url, String htmlUrl, String assetsUrl, String uploadUrl, String tarballUrl, String zipballUrl,
-			String id, String nodeId, String tagName, String targetCommitish, int name, String body, String draft,
+			String id, String nodeId, String tagName, String targetCommitish, String name, String body, String draft,
 			boolean prerelease, Object createdAt, Object publishAt, Author author) {
 		super();
 		this.url = url;
@@ -198,12 +226,12 @@ public class Release extends APIResponse{
 	}
 
 	@JsonProperty("name")
-	public int getName() {
+	public String getName() {
 		return name;
 	}
 
 	@JsonProperty("name")
-	public void setName(int name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
