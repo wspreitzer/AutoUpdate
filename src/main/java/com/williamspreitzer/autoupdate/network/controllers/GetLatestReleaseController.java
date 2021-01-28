@@ -1,11 +1,9 @@
 package com.williamspreitzer.autoupdate.network.controllers;
 
 import java.io.IOException;
-import java.net.UnknownHostException;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.williamspreitzer.autoupdate.domain.APIResponse;
 import com.williamspreitzer.autoupdate.domain.Release;
 import com.williamspreitzer.autoupdate.network.UpdateServiceAPI;
 
